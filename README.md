@@ -1,6 +1,6 @@
 # Wookiee - Component: Socko (HTTP)
 
-[![Build Status](https://travis-ci.org/Webtrends/wookiee-kafka.svg?branch=master)](https://travis-ci.org/Webtrends/wookiee-kafka) [![Coverage Status](https://coveralls.io/repos/Webtrends/wookiee-kafka/badge.svg?branch=master&service=github)](https://coveralls.io/github/Webtrends/wookiee-kafka?branch=master) [![Latest Release](https://img.shields.io/github/release/webtrends/wookiee-kafka.svg)](https://github.com/Webtrends/wookiee-kafka/releases) [![License](http://img.shields.io/:license-Apache%202-red.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
+[![Build Status](https://travis-ci.org/Webtrends/wookiee-socko.svg?branch=master)](https://travis-ci.org/Webtrends/wookiee-socko) [![Coverage Status](https://coveralls.io/repos/Webtrends/wookiee-socko/badge.svg?branch=master&service=github)](https://coveralls.io/github/Webtrends/wookiee-socko?branch=master) [![Latest Release](https://img.shields.io/github/release/webtrends/wookiee-socko.svg)](https://github.com/Webtrends/wookiee-socko/releases) [![License](http://img.shields.io/:license-Apache%202-red.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
 
 [Main Wookiee Project](https://github.com/Webtrends/wookiee)
 
@@ -8,7 +8,7 @@ For Configuration information see [Socko Config](docs/config.md)
 
 Socko is an Akka actor based library that wraps Netty. There is already a Netty component Wookiee, however Socko takes away a bit of the work that is required in the Netty component to get your routes working correctly. The functionality and usage is very similar to that of Spray but instead of Spray under the hood you are using Netty. The big difference between Spray and Socko is that Socko supports websockets as well (not currently supported in the component). Currently however Spray is the only http based component that has a http client that you can use to make http requests.
 
-For working example see [Wookiee - Http Example](../../examples/example-http) or [Wookiee - Rest Example](../../examples/example-rest)
+For working example see [Wookiee - Http Example](example-http) or [Wookiee - Rest Example](example-rest)
 ## Config
 
 ```
