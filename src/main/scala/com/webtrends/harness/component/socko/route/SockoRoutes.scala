@@ -210,12 +210,11 @@ private[route] trait SockoRoutes extends ComponentHelper {
               SockoUtils.toSockoHeaderFormat(bean.event.nettyHttpRequest.getMethod.name(), getResponseHeaders(bean.event.request.headers), 0))
           }
         case Failure(f) => f match {
-          case ce: SockoCommandException => getRejectionHandler(bean.event, ce)
-          case _ => bean.event.response.write(HttpResponseStatus.INTERNAL_SERVER_ERROR, f.getMessage)
+          case ce: Throwable => getRejectionHandler(bean.event, ce)
         }
       }
     } catch {
-      case e:Throwable => getRejectionHandler(bean.event, e)
+      case e: Throwable => getRejectionHandler(bean.event, e)
     }
   }
 
