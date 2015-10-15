@@ -206,7 +206,8 @@ private[route] trait SockoRoutes extends ComponentHelper {
                 SockoUtils.normalizeContentType(resp.responseType),
                 SockoUtils.toSockoHeaderFormat(bean.event.nettyHttpRequest.getMethod.name(), getResponseHeaders(bean.event.request.headers), content.length)
               )
-            case None => bean.event.response.write(HttpResponseStatus.NO_CONTENT)
+            case None => bean.event.response.write(HttpResponseStatus.NO_CONTENT,
+              SockoUtils.toSockoHeaderFormat(bean.event.nettyHttpRequest.getMethod.name(), getResponseHeaders(bean.event.request.headers), 0))
           }
         case Failure(f) => f match {
           case ce: SockoCommandException => getRejectionHandler(bean.event, ce)
