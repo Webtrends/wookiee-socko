@@ -43,7 +43,7 @@ class TestCommand extends Command
    * The primary entry point for the command, the actor for this command
    * will ignore all other messaging and only execute through this
    */
-  override def execute[T](bean: Option[CommandBean]): Future[CommandResponse[T]] = {
+  override def execute[T: Manifest](bean: Option[CommandBean]): Future[CommandResponse[T]] = {
     // just return the bean
     Future {
       bean match {

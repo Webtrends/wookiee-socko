@@ -62,7 +62,7 @@ class MarshallCommand extends Command with SockoGet with SockoPost with SockoPut
    *
    * @return
    */
-  override def execute[T](bean: Option[CommandBean]): Future[CommandResponse[T]] = // return a Foo object
+  override def execute[T: Manifest](bean: Option[CommandBean]): Future[CommandResponse[T]] = // return a Foo object
     Future {
       bean match {
         case Some(b) =>

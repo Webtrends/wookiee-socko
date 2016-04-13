@@ -30,7 +30,7 @@ class TestSockoHandler extends SockoGet with Command {
   override def commandName: String = "testHandler1"
   override def path: String = "foo"
 
-  override def execute[T](bean: Option[CommandBean]): Future[CommandResponse[T]] = {
+  override def execute[T: Manifest](bean: Option[CommandBean]): Future[CommandResponse[T]] = {
     Future[CommandResponse[T]] {
       CommandResponse[T](Some("bar".asInstanceOf[T]), "text")
     }
