@@ -39,7 +39,7 @@ class EmptyCommand extends Command with EntityRoutes {
 
   override def commandName: String = "SockoRoutesSpecTestCommand"
 
-  override def execute[T](bean: Option[CommandBean]): Future[CommandResponse[T]] = {
+  override def execute[T: Manifest](bean: Option[CommandBean]): Future[CommandResponse[T]] = {
     // just return the bean
     Future {
       bean match {

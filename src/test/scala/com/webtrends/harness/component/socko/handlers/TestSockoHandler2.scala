@@ -31,7 +31,7 @@ class TestSockoHandler2 extends SockoGet with Command {
     "path2" -> "/foo2",
     "path3" -> "/foo/$var1/$var2")
 
-  override def execute[T](bean: Option[CommandBean]): Future[CommandResponse[T]] = {
+  override def execute[T: Manifest](bean: Option[CommandBean]): Future[CommandResponse[T]] = {
     val beanSocko = bean.get.asInstanceOf[SockoCommandBean]
     Future[CommandResponse[T]] {
       val pathSelected = beanSocko(CommandBean.KeyPath)
