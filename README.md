@@ -32,11 +32,11 @@ wookiee-socko {
 }
 akka.actor.deployment {
   /system/component/wookiee-socko/Socko/socko-base {
-    router = round-robin-pool
+    router = round-robin
     nr-of-instances = 3
   }
   /system/component/wookiee-socko/static-content-handler {
-    router = round-robin-pool
+    router = round-robin
     nr-of-instance = 3
   }
 }
